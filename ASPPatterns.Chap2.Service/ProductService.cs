@@ -5,10 +5,10 @@ namespace ASPPatterns.Chap2.Service
 {
     public class ProductService
     {
-        private ProductRepository _productRepository;
-        public ProductService()
+        private IProductRepository _productRepository;
+        public ProductService(IProductRepository productRepository)
         {
-            _productRepository = new ProductRepository();
+            _productRepository = productRepository;
         }
         public IList<Product> GetAllProductsIn(int categoryId)
         {
